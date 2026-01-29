@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SpaceX - Antigravity Recreation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">SpaceX</div>
+        <div class="nav-links">
+            <a href="#vehicles">Falcon 9</a>
+            <a href="#vehicles">Falcon Heavy</a>
+            <a href="#vehicles">Dragon</a>
+            <a href="#vehicles">Starship</a>
+            <a href="#launches">Human Spaceflight</a>
+            <a href="#mission">Rideshare</a>
+            <a href="#mission">Starshield</a>
+            <a href="#careers">Starlink</a>
+        </div>
+    </nav>
+
+    <!-- HOME PAGE -->
+    <section class="hero-fullscreen parallax-bg">
+        <div class="video-bg"
+            style="background: url('https://images.unsplash.com/photo-1517976487492-5750f3195933?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover; position:absolute; top:0; left:0; width:100%; height:100%; filter: brightness(0.7);">
+        </div>
+        <!-- Ideally a video here -->
+        <div class="hero-content float-up">
+            <h2 style="font-size: 1.5rem; letter-spacing: 2px; font-weight: 300;">RECENT LAUNCH</h2>
+            <h1>STARSHIP FLIGHT 7</h1>
+            <button class="cta-button">REWATCH</button>
+        </div>
+        <div class="scroll-indicator">
+            <div class="arrow-down"></div>
+        </div>
+    </section>
+
+    <!-- VEHICLES SECTION (Placeholder for One-Page) -->
+    <section id="vehicles" class="vehicle-hero" style="background: #0a0a0a; min-height: 50vh;">
+        <h2>VEHICLES</h2>
+        <p>Falcon 9 • Falcon Heavy • Dragon • Starship</p>
+    </section>
+
+    <!-- MISSION SECTION -->
+    <section id="mission" class="mission-card float-up"
+        style="background: url('https://images.unsplash.com/photo-1541185934-01b6f0ce05f9?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover; height: 100vh;">
+        <div class="mission-overlay" style="position: absolute; bottom: 10%; left: 10%;">
+            <h3 class="text-reveal">STARSHIP TO MARS</h3>
+            <p class="text-reveal" style="font-size: 1.2rem; margin-bottom: 2rem;">Making humanity multiplanetary</p>
+            <button class="cta-button scale-reveal">LEARN MORE</button>
+        </div>
+    </section>
+
+    <!-- LAUNCHES SECTION -->
+    <section class="launches-timeline" id="launches" style="background: #000; min-height: 80vh;">
+        <h2 class="float-up">UPCOMING LAUNCHES</h2>
+        <div class="launch-grid"
+            style="display: flex; gap: 2rem; margin-top: 3rem; flex-wrap: wrap; justify-content: center;">
+            <div class="launch-card tilt-card"
+                style="background: #1a1a1a; padding: 2rem; width: 300px; border: 1px solid #333;">
+                <h3 style="font-size: 1.5rem;">STARLINK MISSION</h3>
+                <p class="date" style="color: var(--flame-orange);">FEB 15, 2026</p>
+                <p>Kennedy Space Center</p>
+            </div>
+            <div class="launch-card tilt-card"
+                style="background: #1a1a1a; padding: 2rem; width: 300px; border: 1px solid #333;">
+                <h3 style="font-size: 1.5rem;">CREW-10</h3>
+                <p class="date" style="color: var(--flame-orange);">FEB 28, 2026</p>
+                <p>Cape Canaveral</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS SECTION -->
+    <section class="stats-section" style="background: #000; display: flex; flex-direction: row; gap: 4rem;">
+        <div class="stat-item" data-count="403">
+            <span class="number" style="font-size: 6rem; font-weight: 700; display: block;">283</span>
+            <p style="text-align: center;">TOTAL LAUNCHES</p>
+        </div>
+        <div class="stat-item" data-count="367">
+            <span class="number" style="font-size: 6rem; font-weight: 700; display: block;">246</span>
+            <p style="text-align: center;">TOTAL LANDINGS</p>
+        </div>
+        <div class="stat-item" data-count="335">
+            <span class="number" style="font-size: 6rem; font-weight: 700; display: block;">221</span>
+            <p style="text-align: center;">REFLIGHTS</p>
+        </div>
+    </section>
+
+    <!-- CAREERS SECTION -->
+    <section id="careers" style="background: #111; min-height: 50vh;">
+        <h2 class="float-up">CAREERS</h2>
+        <button class="cta-button scale-reveal">VIEW OPENINGS</button>
+    </section>
+
+    <!-- PROMPT DISPLAY SECTION -->
+    <section class="prompt-section" style="background: #111; padding: 4rem 2rem; width: 100%; align-items: flex-start;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; width: 100%;">
+            <h2 class="float-up">ORIGINAL PROMPT</h2>
+            <div class="prompt-content"
+                style="background: #000; padding: 2rem; border: 1px solid #333; font-family: monospace; white-space: pre-wrap; height: 400px; overflow-y: scroll; color: #0f0;">
+                Loading prompt...
+            </div>
+        </div>
+    </section>
+
+    <footer style="padding: 4rem; text-align: center; border-top: 1px solid #333;">
+        <p style="color: #666; font-size: 0.8rem;">SPACEX © 2026</p>
+        <div class="links" style="margin-top: 1rem; display: flex; justify-content: center; gap: 1rem;">
+            <a href="#" style="font-size: 0.8rem; color: #fff;">TWITTER</a>
+            <a href="#" style="font-size: 0.8rem; color: #fff;">YOUTUBE</a>
+            <a href="#" style="font-size: 0.8rem; color: #fff;">INSTAGRAM</a>
+            <a href="#" style="font-size: 0.8rem; color: #fff;">FLICKR</a>
+            <a href="#" style="font-size: 0.8rem; color: #fff;">LINKEDIN</a>
+            <a href="#" style="font-size: 0.8rem; color: #fff;">PRIVACY</a>
+            <a href="#" style="font-size: 0.8rem; color: #fff;">SUPPLIERS</a>
+        </div>
+    </footer>
+
+    <script type="module" src="/main.js"></script>
+</body>
+
+</html>
