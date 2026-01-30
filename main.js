@@ -5,7 +5,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 // Effect 1: Floating Elements (Rise Up)
 gsap.utils.toArray('.float-up').forEach(element => {
-  gsap.fromTo(element, 
+  gsap.fromTo(element,
     {
       y: 100,
       opacity: 0
@@ -28,39 +28,34 @@ gsap.utils.toArray('.float-up').forEach(element => {
 
 // Effect 2: Parallax Backgrounds
 gsap.utils.toArray('.parallax-bg').forEach(bg => {
-    // Note: Applying to the background element inside or the section itself
-    // For this simple implementation, if the section has a bg image, we might need a wrapper.
-    // In our HTML, .parallax-bg is the section. We'll animate the background-position or a child.
-    // Let's assume .hero-fullscreen has .video-bg child to parallax.
-    const bgChild = bg.querySelector('.video-bg');
-    if (bgChild) {
-        gsap.to(bgChild, {
-            yPercent: 30, // move down slower
-            ease: 'none',
-            scrollTrigger: {
-            trigger: bg,
-            start: 'top top',
-            end: 'bottom top',
-            scrub: true
-            }
-        });
-    }
+  const bgChild = bg.querySelector('.video-bg');
+  if (bgChild) {
+    gsap.to(bgChild, {
+      yPercent: 30,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: bg,
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true
+      }
+    });
+  }
 });
 
 // Effect 3: Staggered Text Animations
 const textLines = gsap.utils.toArray('.text-reveal');
 textLines.forEach(line => {
-    // Split text or just animate the block
-    gsap.from(line, {
-        y: 50,
-        opacity: 0,
-        duration: 1,
-        scrollTrigger: {
-            trigger: line,
-            start: 'top 85%',
-            toggleActions: 'play none none reverse'
-        }
-    });
+  gsap.from(line, {
+    y: 50,
+    opacity: 0,
+    duration: 1,
+    scrollTrigger: {
+      trigger: line,
+      start: 'top 85%',
+      toggleActions: 'play none none reverse'
+    }
+  });
 });
 
 // Effect 4: 3D Card Tilt
@@ -70,14 +65,13 @@ cards.forEach(card => {
     const rect = card.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
-    
+
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
-    
-    // Calculate rotation (inverted for typical 3D feel)
+
     const rotateX = ((y - centerY) / centerY) * -10;
     const rotateY = ((centerX - x) / centerX) * -10;
-    
+
     gsap.to(card, {
       duration: 0.5,
       rotateX: rotateX,
@@ -86,7 +80,7 @@ cards.forEach(card => {
       ease: 'power2.out'
     });
   });
-  
+
   card.addEventListener('mouseleave', () => {
     gsap.to(card, {
       duration: 0.5,
@@ -120,38 +114,78 @@ gsap.utils.toArray('.scale-reveal').forEach(element => {
 
 // Stats Counter
 gsap.utils.toArray('.stat-item').forEach(stat => {
-    const numberEl = stat.querySelector('.number');
-    const target = parseInt(stat.getAttribute('data-count'));
-    
-    ScrollTrigger.create({
-        trigger: stat,
-        start: 'top 80%',
-        once: true,
-        onEnter: () => {
-            gsap.to(numberEl, {
-                innerHTML: target,
-                duration: 2,
-                snap: { innerHTML: 1 },
-                ease: "power1.out"
-            });
-        }
-    });
+  const numberEl = stat.querySelector('.number');
+  const target = parseInt(stat.getAttribute('data-count'));
+
+  ScrollTrigger.create({
+    trigger: stat,
+    start: 'top 80%',
+    once: true,
+    onEnter: () => {
+      gsap.to(numberEl, {
+        innerHTML: target,
+        duration: 2,
+        snap: { innerHTML: 1 },
+        ease: "power1.out"
+      });
+    }
+  });
 });
 
-// Fetch and display prompt
-async function loadPrompt() {
-    try {
-        const response = await fetch('/tasks.md');
-        if (response.ok) {
-            const text = await response.text();
-            document.querySelector('.prompt-content').textContent = text;
-        } else {
-            // If fetching tasks.md fails (in production it might move), try alternative or partial
-            document.querySelector('.prompt-content').textContent = "Could not load prompt.";
+// Background Music Control
+let bgMusic = null;
+let isMuted = false;
+
+function initBackgroundMusic() {
+  // Create audio element
+  bgMusic = new Audio('/assets/music/deep_bg_music.mp3');
+  bgMusic.loop = true;
+  bgMusic.volume = 0.3; // Set to 30% volume for background ambience
+
+  // Try to play (may be blocked by browser autoplay policy)
+  const playPromise = bgMusic.play();
+
+  if (playPromise !== undefined) {
+    playPromise.catch(error => {
+      console.log('Autoplay prevented. Music will start on first user interaction.');
+      // Add one-time click listener to start music
+      document.addEventListener('click', () => {
+        if (bgMusic && !isMuted) {
+          bgMusic.play().catch(e => console.log('Could not play audio:', e));
         }
-    } catch (e) {
-        console.error("Error loading prompt:", e);
-        document.querySelector('.prompt-content').textContent = "Error loading prompt.";
-    }
+      }, { once: true });
+    });
+  }
 }
-loadPrompt();
+
+// Mute/Unmute toggle function
+window.toggleMusic = function () {
+  const musicBtn = document.getElementById('music-toggle');
+
+  if (!bgMusic) {
+    initBackgroundMusic();
+  }
+
+  if (isMuted) {
+    // Unmute
+    bgMusic.play();
+    isMuted = false;
+    if (musicBtn) {
+      musicBtn.innerHTML = '🔊';
+      musicBtn.setAttribute('aria-label', 'Mute music');
+    }
+  } else {
+    // Mute
+    bgMusic.pause();
+    isMuted = true;
+    if (musicBtn) {
+      musicBtn.innerHTML = '🔇';
+      musicBtn.setAttribute('aria-label', 'Unmute music');
+    }
+  }
+}
+
+// Initialize music on page load
+document.addEventListener('DOMContentLoaded', () => {
+  initBackgroundMusic();
+});

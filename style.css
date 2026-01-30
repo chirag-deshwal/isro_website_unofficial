@@ -1,21 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Inter:wght@300;400;600&display=swap');
 
 :root {
-  /* Primary Colors */
+  /* Primary Colors - Deep Space Theme */
   --space-black: #000000;
-  --deep-space: #0a0a0a;
-  --dark-grey: #1a1a1a;
-  
+  --deep-space: #0a0a0f;
+  --cosmic-void: #050508;
+  --isro-blue: #1b3964;
+  --isro-orange: #f37021;
+
   /* Accent Colors */
-  --spacex-white: #ffffff;
-  --spacex-blue: #005288;
-  --flame-orange: #ff6b35;
-  
+  --tiranga-green: #138808;
+  --starlight-white: #ffffff;
+  --metallic-silver: #e0e0e0;
+  --nebula-purple: #6b4c9a;
+  --cosmic-blue: #0d47a1;
+
   /* Functional Colors */
   --text-primary: #ffffff;
-  --text-secondary: #b3b3b3;
+  --text-secondary: #b8c5d6;
   --border-color: rgba(255, 255, 255, 0.1);
-  --overlay: rgba(0, 0, 0, 0.6);
+  --overlay: rgba(0, 0, 0, 0.8);
 }
 
 * {
@@ -25,48 +29,256 @@
 }
 
 body {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Inter', sans-serif;
   background-color: var(--space-black);
   color: var(--text-primary);
   font-size: 1rem;
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  position: relative;
 }
 
-h1, h2, h3, h4, h5, h6 {
+/* Moving Starfield - Layer 1 (Far stars - slow) */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(1px 1px at 20% 30%, white, transparent),
+    radial-gradient(1px 1px at 60% 70%, white, transparent),
+    radial-gradient(1px 1px at 50% 50%, white, transparent),
+    radial-gradient(1px 1px at 80% 10%, white, transparent),
+    radial-gradient(1px 1px at 90% 60%, white, transparent),
+    radial-gradient(1px 1px at 33% 80%, white, transparent),
+    radial-gradient(1px 1px at 15% 90%, white, transparent),
+    radial-gradient(1px 1px at 45% 15%, white, transparent),
+    radial-gradient(1px 1px at 75% 45%, white, transparent),
+    radial-gradient(1px 1px at 10% 60%, white, transparent),
+    radial-gradient(1px 1px at 25% 25%, white, transparent),
+    radial-gradient(1px 1px at 85% 85%, white, transparent);
+  background-size: 200% 200%;
+  animation: starsMoveSlow 240s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+/* Moving Starfield - Layer 2 (Medium stars) */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(2px 2px at 15% 40%, rgba(255, 255, 255, 0.9), transparent),
+    radial-gradient(2px 2px at 55% 65%, rgba(255, 255, 255, 0.9), transparent),
+    radial-gradient(1px 1px at 70% 20%, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(2px 2px at 35% 75%, rgba(255, 255, 255, 0.9), transparent),
+    radial-gradient(1px 1px at 88% 50%, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(2px 2px at 42% 88%, rgba(255, 255, 255, 0.9), transparent),
+    radial-gradient(1px 1px at 65% 35%, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(2px 2px at 22% 55%, rgba(255, 255, 255, 0.9), transparent);
+  background-size: 250% 250%;
+  animation: starsMoveMedium 120s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.6;
+}
+
+/* Galaxy Nebula Layer */
+body {
+  position: relative;
+}
+
+body>*:first-child::before {
+  content: '';
+  position: fixed;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(27, 57, 100, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 80%, rgba(107, 76, 154, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(13, 71, 161, 0.08) 0%, transparent 60%),
+    radial-gradient(circle at 80% 30%, rgba(243, 112, 33, 0.06) 0%, transparent 40%);
+  animation: galaxyRotate 300s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Close/Fast Stars Layer - Creates depth */
+nav::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(3px 3px at 12% 22%, rgba(255, 255, 255, 0.95), transparent),
+    radial-gradient(2px 2px at 78% 45%, rgba(255, 255, 255, 0.9), transparent),
+    radial-gradient(3px 3px at 40% 68%, rgba(255, 255, 255, 0.95), transparent),
+    radial-gradient(2px 2px at 92% 15%, rgba(255, 255, 255, 0.9), transparent),
+    radial-gradient(3px 3px at 28% 82%, rgba(255, 255, 255, 0.95), transparent),
+    radial-gradient(2px 2px at 58% 38%, rgba(255, 255, 255, 0.9), transparent);
+  background-size: 300% 300%;
+  animation: starsMoveFast 60s linear infinite;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.8;
+}
+
+/* Shooting Stars */
+@keyframes shootingStar {
+  0% {
+    transform: translateX(0) translateY(0);
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(-1000px) translateY(500px);
+    opacity: 0;
+  }
+}
+
+section::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8);
+  animation: shootingStar 3s ease-in infinite;
+  animation-delay: calc(var(--shooting-star-delay, 0) * 1s);
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0;
+}
+
+/* Star Movement Animations */
+@keyframes starsMoveSlow {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+
+  100% {
+    transform: translateY(100vh) translateX(50vw);
+  }
+}
+
+@keyframes starsMoveMedium {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+
+  100% {
+    transform: translateY(100vh) translateX(30vw);
+  }
+}
+
+@keyframes starsMoveFast {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+  }
+
+  100% {
+    transform: translateY(100vh) translateX(20vw) scale(1.5);
+  }
+}
+
+@keyframes galaxyRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Rajdhani', sans-serif;
   text-transform: uppercase;
+  position: relative;
+  z-index: 1;
 }
 
-h1 { font-size: 4.5rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 1rem; }
-h2 { font-size: 3rem; font-weight: 600; margin-bottom: 1rem; }
-h3 { font-size: 2rem; font-weight: 500; margin-bottom: 0.5rem; }
+h1 {
+  font-size: 4.5rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 20px rgba(27, 57, 100, 0.5);
+}
+
+h2 {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 15px rgba(27, 57, 100, 0.4);
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
 
 a {
   color: var(--text-primary);
   text-decoration: none;
   transition: color 0.3s ease;
+  position: relative;
+  z-index: 1;
 }
 
 a:hover {
-  color: var(--text-secondary);
+  color: var(--isro-orange);
 }
 
-button, .cta-button {
+button,
+.cta-button {
   cursor: pointer;
   border: 2px solid var(--text-primary);
-  background: transparent;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
   color: var(--text-primary);
-  padding: 1rem 2rem;
+  padding: 1rem 2.5rem;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 600;
+  letter-spacing: 2px;
   transition: all 0.3s ease;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.9rem;
+  position: relative;
+  z-index: 1;
 }
 
-button:hover, .cta-button:hover {
+button:hover,
+.cta-button:hover {
   background: var(--text-primary);
   color: var(--space-black);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
 }
 
 /* Sections */
@@ -79,6 +291,7 @@ section {
   align-items: center;
   padding: 4rem 2rem;
   overflow: hidden;
+  z-index: 1;
 }
 
 .hero-fullscreen {
@@ -88,9 +301,11 @@ section {
   justify-content: center;
   align-items: center;
   text-align: center;
+  position: relative;
 }
 
-.hero-fullscreen video {
+.hero-fullscreen video,
+.hero-fullscreen .video-bg {
   position: absolute;
   top: 0;
   left: 0;
@@ -98,17 +313,33 @@ section {
   height: 100%;
   object-fit: cover;
   z-index: -1;
-  opacity: 0.6;
 }
 
 .hero-content {
   z-index: 10;
-  max-width: 800px;
+  max-width: 900px;
+  padding: 2rem;
+  position: relative;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  border: 1px solid var(--isro-orange);
+  background: rgba(243, 112, 33, 0.1);
+  backdrop-filter: blur(10px);
+  color: var(--isro-orange);
+  margin-bottom: 1.5rem;
+  font-family: 'Rajdhani';
+  font-weight: 600;
+  letter-spacing: 3px;
+  font-size: 0.85rem;
+  box-shadow: 0 0 20px rgba(243, 112, 33, 0.3);
 }
 
 .scroll-indicator {
   position: absolute;
-  bottom: 2rem;
+  bottom: 3rem;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -116,6 +347,7 @@ section {
   align-items: center;
   opacity: 0.8;
   animation: bounce 2s infinite;
+  z-index: 10;
 }
 
 .arrow-down {
@@ -128,14 +360,22 @@ section {
 }
 
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {transform: translateX(-50%) translateY(0);}
-  40% {transform: translateX(-50%) translateY(-10px);}
-  60% {transform: translateX(-50%) translateY(-5px);}
-}
 
-/* Animation Classes */
-.float-up {
-  opacity: 0; /* JS will handle fade in */
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  40% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+
+  60% {
+    transform: translateX(-50%) translateY(-5px);
+  }
 }
 
 /* Navigation */
@@ -144,28 +384,174 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 2rem;
+  padding: 1.5rem 4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
-  mix-blend-mode: difference;
+  backdrop-filter: blur(15px);
+  background: rgba(0, 0, 0, 0.7);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
 .logo {
-  font-size: 1.5rem;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 2rem;
   font-weight: 700;
   letter-spacing: 5px;
-  text-transform: uppercase;
+  color: var(--text-primary);
+  text-shadow: 0 0 10px rgba(27, 57, 100, 0.5);
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.logo img {
+  height: 50px;
+  width: auto;
+  filter: drop-shadow(0 0 10px rgba(243, 112, 33, 0.3));
+  transition: filter 0.3s ease;
+}
+
+.logo img:hover {
+  filter: drop-shadow(0 0 15px rgba(243, 112, 33, 0.5));
+}
+
+/* Right side container for nav links and music button */
+nav>div:last-of-type {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 }
 
 .nav-links {
   display: flex;
-  gap: 2rem;
+  gap: 3rem;
+  align-items: center;
 }
 
 .nav-links a {
-  font-weight: 700;
-  font-size: 0.9rem;
-  text-transform: uppercase;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--isro-orange);
+  transition: width 0.3s ease;
+  box-shadow: 0 0 10px var(--isro-orange);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Music Toggle Button - Flat Design */
+.music-btn {
+  background: transparent;
+  border: none;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 10px;
+  border-radius: 50%;
+  opacity: 0.7;
+  color: #000000;
+}
+
+.music-btn:hover {
+  opacity: 1;
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 8px rgba(243, 112, 33, 0.6));
+  border-radius: 50%;
+}
+
+.music-btn:active {
+  transform: scale(0.95);
+}
+
+/* Cards */
+.tilt-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+.tilt-card:hover {
+  box-shadow: 0 10px 40px rgba(27, 57, 100, 0.3), 0 0 20px rgba(243, 112, 33, 0.2);
+  border-color: rgba(243, 112, 33, 0.3);
+}
+
+.mission-overlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent);
+  padding: 3rem;
+  width: 100%;
+}
+
+/* Stats Section */
+.stats-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  nav {
+    padding: 1rem 2rem;
+  }
+
+  .nav-links {
+    gap: 1.5rem;
+    font-size: 0.85rem;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  section {
+    padding: 2rem 1rem;
+  }
 }

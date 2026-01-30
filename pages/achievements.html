@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="ISRO Achievements - Mission Brochures and Highlights" />
+    <title>Achievements & Mission Brochures | ISRO</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="logo">
+            <img src="/isro-logo.png" alt="ISRO Logo" style="height: 50px; width: auto;">
+        </div>
+        <div>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="achievements.html">Achievements</a>
+                <a href="gaganyaan.html">Gaganyaan</a>
+            </div>
+            <button id="music-toggle" onclick="toggleMusic()" class="music-btn" aria-label="Mute music">
+                🔊
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero-fullscreen parallax-bg" style="min-height: 60vh;">
+        <div class="video-bg" style="background: linear-gradient(135deg, #f37021 0%, #1b3964 100%);"></div>
+
+        <div class="hero-content float-up">
+            <div class="badge">MISSION ARCHIVES</div>
+            <h1 style="font-size: 3.5rem;">ACHIEVEMENTS & BROCHURES</h1>
+            <p style="font-size: 1.3rem; margin: 2rem auto; max-width: 800px; line-height: 1.8;">
+                Explore our mission highlights, technical brochures, and achievements
+            </p>
+        </div>
+    </section>
+
+    <!-- BREADCRUMB -->
+    <section style="background: rgba(0,0,0,0.5); min-height: auto; padding: 1.5rem 4rem; backdrop-filter: blur(10px);">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <p style="color: #888; font-size: 0.9rem;">
+                <a href="../index.html" style="color: var(--isro-orange);">Home</a> /
+                <span style="color: #fff;">Achievements</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <section style="background: transparent; padding: 6rem 2rem;">
+        <div style="max-width: 1400px; margin: 0 auto;">
+
+            <!-- Section Header -->
+            <div class="float-up" style="text-align: center; margin-bottom: 5rem;">
+                <h2 style="color: var(--isro-orange); font-size: 3rem; margin-bottom: 1rem;">MISSION BROCHURES</h2>
+                <p style="color: var(--text-secondary); font-size: 1.2rem; max-width: 700px; margin: 0 auto;">
+                    Comprehensive documentation of ISRO's groundbreaking missions and technological achievements
+                </p>
+            </div>
+
+            <!-- Brochures Grid -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3rem;">
+
+                <!-- SMOPS 2026 -->
+                <div class="tilt-card float-up"
+                    style="padding: 0; overflow: hidden; border: 1px solid rgba(243, 112, 33, 0.3);">
+                    <div
+                        style="background: linear-gradient(135deg, rgba(243, 112, 33, 0.2) 0%, rgba(27, 57, 100, 0.2) 100%); padding: 3rem 2rem; text-align: center; border-bottom: 2px solid rgba(243, 112, 33, 0.3);">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">📘</div>
+                        <h3 style="color: var(--isro-orange); font-size: 1.5rem; margin-bottom: 0.5rem;">SMOPS 2026</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Satellite Mission Operations</p>
+                    </div>
+                    <div style="padding: 2rem;">
+                        <p
+                            style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 2rem; font-size: 0.95rem;">
+                            Comprehensive brochure detailing satellite mission operations and planning for 2026.
+                        </p>
+                        <a href="https://www.isro.gov.in/media_isro/pdf/Highlights/SMOPS2026_Brochure_07102025.pdf"
+                            target="_blank" class="cta-button"
+                            style="width: 100%; display: block; text-align: center; padding: 1rem;">
+                            VIEW BROCHURE
+                        </a>
+                    </div>
+                </div>
+
+                <!-- PSLV-C30 -->
+                <div class="tilt-card float-up"
+                    style="padding: 0; overflow: hidden; border: 1px solid rgba(27, 57, 100, 0.3);">
+                    <div
+                        style="background: linear-gradient(135deg, rgba(27, 57, 100, 0.2) 0%, rgba(19, 136, 8, 0.2) 100%); padding: 3rem 2rem; text-align: center; border-bottom: 2px solid rgba(27, 57, 100, 0.3);">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">🚀</div>
+                        <h3 style="color: var(--isro-blue); font-size: 1.5rem; margin-bottom: 0.5rem;">PSLV-C30</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Polar Satellite Launch Vehicle</p>
+                    </div>
+                    <div style="padding: 2rem;">
+                        <p
+                            style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 2rem; font-size: 0.95rem;">
+                            Technical documentation of the PSLV-C30 mission, showcasing India's workhorse launcher.
+                        </p>
+                        <a href="https://www.isro.gov.in/media_isro/pdf/Highlights/PSLV-C30Brochure.compressed.pdf"
+                            target="_blank" class="cta-button"
+                            style="width: 100%; display: block; text-align: center; padding: 1rem;">
+                            VIEW BROCHURE
+                        </a>
+                    </div>
+                </div>
+
+                <!-- AstroSat -->
+                <div class="tilt-card float-up"
+                    style="padding: 0; overflow: hidden; border: 1px solid rgba(107, 76, 154, 0.3);">
+                    <div
+                        style="background: linear-gradient(135deg, rgba(107, 76, 154, 0.2) 0%, rgba(243, 112, 33, 0.2) 100%); padding: 3rem 2rem; text-align: center; border-bottom: 2px solid rgba(107, 76, 154, 0.3);">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">🔭</div>
+                        <h3 style="color: var(--nebula-purple); font-size: 1.5rem; margin-bottom: 0.5rem;">ASTROSAT</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">India's First Space Observatory</p>
+                    </div>
+                    <div style="padding: 2rem;">
+                        <p
+                            style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 2rem; font-size: 0.95rem;">
+                            Highlights of India's first dedicated multi-wavelength space observatory mission.
+                        </p>
+                        <a href="https://www.isro.gov.in/media_isro/pdf/Highlights/AstroSat.pdf" target="_blank"
+                            class="cta-button" style="width: 100%; display: block; text-align: center; padding: 1rem;">
+                            VIEW BROCHURE
+                        </a>
+                    </div>
+                </div>
+
+                <!-- LVM3 M2 OneWeb -->
+                <div class="tilt-card float-up"
+                    style="padding: 0; overflow: hidden; border: 1px solid rgba(19, 136, 8, 0.3);">
+                    <div
+                        style="background: linear-gradient(135deg, rgba(19, 136, 8, 0.2) 0%, rgba(27, 57, 100, 0.2) 100%); padding: 3rem 2rem; text-align: center; border-bottom: 2px solid rgba(19, 136, 8, 0.3);">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">🛰️</div>
+                        <h3 style="color: var(--tiranga-green); font-size: 1.5rem; margin-bottom: 0.5rem;">LVM3 M2
+                            ONEWEB</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Commercial Launch Mission</p>
+                    </div>
+                    <div style="padding: 2rem;">
+                        <p
+                            style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 2rem; font-size: 0.95rem;">
+                            LVM3's commercial mission deploying OneWeb satellites, demonstrating heavy-lift capability.
+                        </p>
+                        <a href="https://www.isro.gov.in/media_isro/pdf/Missions/LVM3/LVM3M2OneWebBrochure.pdf"
+                            target="_blank" class="cta-button"
+                            style="width: 100%; display: block; text-align: center; padding: 1rem;">
+                            VIEW BROCHURE
+                        </a>
+                    </div>
+                </div>
+
+                <!-- TVD1 Gaganyaan -->
+                <div class="tilt-card float-up"
+                    style="padding: 0; overflow: hidden; border: 1px solid rgba(243, 112, 33, 0.5); box-shadow: 0 0 30px rgba(243, 112, 33, 0.2);">
+                    <div
+                        style="background: linear-gradient(135deg, rgba(243, 112, 33, 0.3) 0%, rgba(27, 57, 100, 0.3) 100%); padding: 3rem 2rem; text-align: center; border-bottom: 2px solid rgba(243, 112, 33, 0.5);">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">👨‍🚀</div>
+                        <h3 style="color: var(--isro-orange); font-size: 1.5rem; margin-bottom: 0.5rem;">TVD1 GAGANYAAN
+                        </h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Human Spaceflight Test</p>
+                        <div class="badge" style="margin-top: 1rem; font-size: 0.7rem;">FEATURED MISSION</div>
+                    </div>
+                    <div style="padding: 2rem;">
+                        <p
+                            style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 2rem; font-size: 0.95rem;">
+                            Test Vehicle Demonstration mission for India's ambitious Gaganyaan human spaceflight
+                            program.
+                        </p>
+                        <a href="https://www.isro.gov.in/media_isro/pdf/TVD1/TVD1-Brochure.pdf" target="_blank"
+                            class="cta-button"
+                            style="width: 100%; display: block; text-align: center; padding: 1rem; background: rgba(243, 112, 33, 0.2);">
+                            VIEW BROCHURE
+                        </a>
+                    </div>
+                </div>
+
+                <!-- LVM3 M5 CMS-03 -->
+                <div class="tilt-card float-up"
+                    style="padding: 0; overflow: hidden; border: 1px solid rgba(27, 57, 100, 0.3);">
+                    <div
+                        style="background: linear-gradient(135deg, rgba(27, 57, 100, 0.2) 0%, rgba(243, 112, 33, 0.2) 100%); padding: 3rem 2rem; text-align: center; border-bottom: 2px solid rgba(27, 57, 100, 0.3);">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">📡</div>
+                        <h3 style="color: var(--isro-blue); font-size: 1.5rem; margin-bottom: 0.5rem;">LVM3 M5 CMS-03
+                        </h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Communication Satellite</p>
+                    </div>
+                    <div style="padding: 2rem;">
+                        <p
+                            style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 2rem; font-size: 0.95rem;">
+                            Mission brochure for the CMS-03 communication satellite launched by LVM3 M5.
+                        </p>
+                        <a href="https://www.isro.gov.in/media_isro/pdf/CMS-03-LVM3M5_Brochure.pdf" target="_blank"
+                            class="cta-button" style="width: 100%; display: block; text-align: center; padding: 1rem;">
+                            VIEW BROCHURE
+                        </a>
+                    </div>
+                </div>
+
+                <!-- PSLV C61 EOS-09 -->
+                <div class="tilt-card float-up"
+                    style="padding: 0; overflow: hidden; border: 1px solid rgba(19, 136, 8, 0.3);">
+                    <div
+                        style="background: linear-gradient(135deg, rgba(19, 136, 8, 0.2) 0%, rgba(107, 76, 154, 0.2) 100%); padding: 3rem 2rem; text-align: center; border-bottom: 2px solid rgba(19, 136, 8, 0.3);">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">🌍</div>
+                        <h3 style="color: var(--tiranga-green); font-size: 1.5rem; margin-bottom: 0.5rem;">PSLV C61
+                            EOS-09</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Earth Observation Satellite</p>
+                    </div>
+                    <div style="padding: 2rem;">
+                        <p
+                            style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 2rem; font-size: 0.95rem;">
+                            Latest Earth Observation Satellite mission launched by the reliable PSLV C61.
+                        </p>
+                        <a href="https://www.isro.gov.in/media_isro/pdf/PSLVC61/PSLV_C61_EOS_09_Brochure.pdf"
+                            target="_blank" class="cta-button"
+                            style="width: 100%; display: block; text-align: center; padding: 1rem;">
+                            VIEW BROCHURE
+                        </a>
+                    </div>
+                </div>
+
+                <!-- GSLV F16 NISAR -->
+                <div class="tilt-card float-up"
+                    style="padding: 0; overflow: hidden; border: 1px solid rgba(107, 76, 154, 0.3);">
+                    <div
+                        style="background: linear-gradient(135deg, rgba(107, 76, 154, 0.2) 0%, rgba(27, 57, 100, 0.2) 100%); padding: 3rem 2rem; text-align: center; border-bottom: 2px solid rgba(107, 76, 154, 0.3);">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">🛰️</div>
+                        <h3 style="color: var(--nebula-purple); font-size: 1.5rem; margin-bottom: 0.5rem;">GSLV F16
+                            NISAR</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">NASA-ISRO Collaboration</p>
+                    </div>
+                    <div style="padding: 2rem;">
+                        <p
+                            style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 2rem; font-size: 0.95rem;">
+                            NASA-ISRO Synthetic Aperture Radar mission for Earth observation and climate studies.
+                        </p>
+                        <a href="https://www.isro.gov.in/media_isro/pdf/GSLV_F16NISAR_Launch_Brochure.pdf"
+                            target="_blank" class="cta-button"
+                            style="width: 100%; display: block; text-align: center; padding: 1rem;">
+                            VIEW BROCHURE
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Statistics Section -->
+            <div class="float-up"
+                style="margin-top: 6rem; padding: 4rem; background: rgba(27, 57, 100, 0.1); border-radius: 12px; border: 1px solid rgba(27, 57, 100, 0.3);">
+                <h2 style="text-align: center; color: var(--isro-blue); margin-bottom: 3rem;">MISSION STATISTICS</h2>
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; text-align: center;">
+                    <div class="scale-reveal">
+                        <div
+                            style="font-size: 4rem; color: var(--isro-orange); font-weight: 700; font-family: 'Rajdhani';">
+                            8</div>
+                        <p style="color: var(--text-secondary); letter-spacing: 2px; margin-top: 0.5rem;">FEATURED
+                            BROCHURES</p>
+                    </div>
+                    <div class="scale-reveal">
+                        <div
+                            style="font-size: 4rem; color: var(--isro-blue); font-weight: 700; font-family: 'Rajdhani';">
+                            3</div>
+                        <p style="color: var(--text-secondary); letter-spacing: 2px; margin-top: 0.5rem;">LAUNCH
+                            VEHICLES</p>
+                    </div>
+                    <div class="scale-reveal">
+                        <div
+                            style="font-size: 4rem; color: var(--tiranga-green); font-weight: 700; font-family: 'Rajdhani';">
+                            100%</div>
+                        <p style="color: var(--text-secondary); letter-spacing: 2px; margin-top: 0.5rem;">SUCCESS RATE
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section
+        style="background: linear-gradient(135deg, var(--isro-blue) 0%, var(--isro-orange) 100%); padding: 5rem 2rem; text-align: center;">
+        <div class="scale-reveal">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">EXPLORE MORE</h2>
+            <p
+                style="font-size: 1.2rem; margin-bottom: 2.5rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                Discover more about ISRO's missions, technologies, and future plans
+            </p>
+            <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
+                <a href="../index.html" class="cta-button">HOME</a>
+                <a href="about.html" class="cta-button">ABOUT ISRO</a>
+                <a href="../index.html#missions" class="cta-button">ALL MISSIONS</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer
+        style="padding: 5rem 2rem 3rem; text-align: center; border-top: 1px solid #222; background-color: var(--space-black);">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; letter-spacing: 6px; color: var(--starlight-white);">ISRO
+        </h2>
+        <p style="color: var(--text-secondary); font-style: italic; margin-bottom: 3rem; font-size: 1.1rem;">
+            "Space technology in the Service of Humankind"
+        </p>
+
+        <div style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; margin-bottom: 3rem;">
+            <a href="../index.html" style="color: #999; font-size: 0.9rem;">Home</a>
+            <a href="about.html" style="color: #999; font-size: 0.9rem;">About</a>
+            <a href="achievements.html" style="color: #999; font-size: 0.9rem;">Achievements</a>
+            <a href="services.html" style="color: #999; font-size: 0.9rem;">Services</a>
+        </div>
+
+        <p style="font-size: 0.85rem; color: #555;">
+            © 2026 Indian Space Research Organisation. All rights reserved.
+        </p>
+    </footer>
+
+    <script type="module" src="../main.js"></script>
+</body>
+
+</html>

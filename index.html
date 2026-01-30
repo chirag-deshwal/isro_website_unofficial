@@ -3,123 +3,293 @@
 
 <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SpaceX - Antigravity Recreation</title>
+    <meta name="description"
+        content="ISRO - Indian Space Research Organisation. Exploring space for the benefit of humankind." />
+    <title>ISRO - Indian Space Research Organisation</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <!-- NAVIGATION -->
     <nav>
-        <div class="logo">SpaceX</div>
-        <div class="nav-links">
-            <a href="#vehicles">Falcon 9</a>
-            <a href="#vehicles">Falcon Heavy</a>
-            <a href="#vehicles">Dragon</a>
-            <a href="#vehicles">Starship</a>
-            <a href="#launches">Human Spaceflight</a>
-            <a href="#mission">Rideshare</a>
-            <a href="#mission">Starshield</a>
-            <a href="#careers">Starlink</a>
+        <div class="logo">
+            <img src="/isro-logo.png" alt="ISRO Logo" style="height: 50px; width: auto;">
+        </div>
+        <div>
+            <div class="nav-links">
+                <a href="pages/about.html">About</a>
+                <a href="pages/services.html">Services</a>
+                <a href="pages/achievements.html">Achievements</a>
+                <a href="pages/gaganyaan.html">Gaganyaan</a>
+                <a href="#missions">Missions</a>
+                <a href="#launchers">Launchers</a>
+            </div>
+            <button id="music-toggle" onclick="toggleMusic()" class="music-btn" aria-label="Mute music">
+                🔊
+            </button>
         </div>
     </nav>
 
-    <!-- HOME PAGE -->
+    <!-- HERO SECTION - CHANDRAYAAN-3 -->
     <section class="hero-fullscreen parallax-bg">
         <div class="video-bg"
-            style="background: url('https://images.unsplash.com/photo-1517976487492-5750f3195933?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover; position:absolute; top:0; left:0; width:100%; height:100%; filter: brightness(0.7);">
+            style="background: url('chandrayaan_moon_landing.png') no-repeat center center/cover; filter: brightness(0.4);">
         </div>
-        <!-- Ideally a video here -->
+
         <div class="hero-content float-up">
-            <h2 style="font-size: 1.5rem; letter-spacing: 2px; font-weight: 300;">RECENT LAUNCH</h2>
-            <h1>STARSHIP FLIGHT 7</h1>
-            <button class="cta-button">REWATCH</button>
+            <div class="badge">MISSION SUCCESS</div>
+            <h1>CHANDRAYAAN-3</h1>
+            <h2>INDIA ON THE MOON</h2>
+            <p style="font-size: 1.2rem; margin: 2rem auto; max-width: 700px; line-height: 1.8;">
+                On August 23, 2023, India became the first nation to successfully land a spacecraft on the lunar South
+                Pole.
+                This historic achievement marks a new era in space exploration.
+            </p>
+            <button class="cta-button">EXPLORE MISSION</button>
         </div>
+
         <div class="scroll-indicator">
+            <span style="font-family: 'Rajdhani'; letter-spacing: 2px; font-size: 0.8rem;">SCROLL TO EXPLORE</span>
             <div class="arrow-down"></div>
         </div>
     </section>
 
-    <!-- VEHICLES SECTION (Placeholder for One-Page) -->
-    <section id="vehicles" class="vehicle-hero" style="background: #0a0a0a; min-height: 50vh;">
-        <h2>VEHICLES</h2>
-        <p>Falcon 9 • Falcon Heavy • Dragon • Starship</p>
-    </section>
+    <!-- LAUNCHERS SECTION -->
+    <section id="launchers" style="background: linear-gradient(180deg, #050505 0%, #0a0a0a 100%);">
+        <h2 class="float-up" style="color: var(--metallic-silver); margin-bottom: 1rem;">INDIA'S LAUNCH FLEET</h2>
+        <p class="float-up" style="color: var(--text-secondary); margin-bottom: 4rem; font-size: 1.1rem;">
+            Precision. Reliability. Innovation.
+        </p>
 
-    <!-- MISSION SECTION -->
-    <section id="mission" class="mission-card float-up"
-        style="background: url('https://images.unsplash.com/photo-1541185934-01b6f0ce05f9?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover; height: 100vh;">
-        <div class="mission-overlay" style="position: absolute; bottom: 10%; left: 10%;">
-            <h3 class="text-reveal">STARSHIP TO MARS</h3>
-            <p class="text-reveal" style="font-size: 1.2rem; margin-bottom: 2rem;">Making humanity multiplanetary</p>
-            <button class="cta-button scale-reveal">LEARN MORE</button>
-        </div>
-    </section>
-
-    <!-- LAUNCHES SECTION -->
-    <section class="launches-timeline" id="launches" style="background: #000; min-height: 80vh;">
-        <h2 class="float-up">UPCOMING LAUNCHES</h2>
-        <div class="launch-grid"
-            style="display: flex; gap: 2rem; margin-top: 3rem; flex-wrap: wrap; justify-content: center;">
-            <div class="launch-card tilt-card"
-                style="background: #1a1a1a; padding: 2rem; width: 300px; border: 1px solid #333;">
-                <h3 style="font-size: 1.5rem;">STARLINK MISSION</h3>
-                <p class="date" style="color: var(--flame-orange);">FEB 15, 2026</p>
-                <p>Kennedy Space Center</p>
+        <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; max-width: 1200px;">
+            <!-- LVM3 -->
+            <div class="tilt-card float-up"
+                style="border: 1px solid var(--border-color); padding: 3rem 2rem; width: 320px; text-align: left;">
+                <h3 style="color: var(--isro-orange); margin-bottom: 0.5rem;">LVM3</h3>
+                <p class="badge"
+                    style="border-color: var(--text-secondary); color: var(--text-secondary); font-size: 0.7rem; margin-bottom: 1.5rem;">
+                    HEAVY LIFT
+                </p>
+                <p style="color: #aaa; font-size: 0.95rem; line-height: 1.7; margin-bottom: 2rem;">
+                    The "Bahubali" of ISRO. India's most powerful launcher, capable of placing 8,000 kg satellites into
+                    Low Earth Orbit.
+                    Selected for the prestigious Gaganyaan human spaceflight mission.
+                </p>
+                <div style="border-top: 1px solid #333; padding-top: 1.5rem;">
+                    <p style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                        <span style="color: #666;">HEIGHT</span>
+                        <span style="color: var(--starlight-white);">43.5 m</span>
+                    </p>
+                    <p style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                        <span style="color: #666;">PAYLOAD (LEO)</span>
+                        <span style="color: var(--starlight-white);">8,000 kg</span>
+                    </p>
+                    <p style="display: flex; justify-content: space-between;">
+                        <span style="color: #666;">STAGES</span>
+                        <span style="color: var(--starlight-white);">3</span>
+                    </p>
+                </div>
             </div>
-            <div class="launch-card tilt-card"
-                style="background: #1a1a1a; padding: 2rem; width: 300px; border: 1px solid #333;">
-                <h3 style="font-size: 1.5rem;">CREW-10</h3>
-                <p class="date" style="color: var(--flame-orange);">FEB 28, 2026</p>
-                <p>Cape Canaveral</p>
+
+            <!-- PSLV -->
+            <div class="tilt-card float-up"
+                style="border: 1px solid var(--border-color); padding: 3rem 2rem; width: 320px; text-align: left;">
+                <h3 style="color: var(--isro-blue); margin-bottom: 0.5rem;">PSLV</h3>
+                <p class="badge"
+                    style="border-color: var(--text-secondary); color: var(--text-secondary); font-size: 0.7rem; margin-bottom: 1.5rem;">
+                    WORKHORSE
+                </p>
+                <p style="color: #aaa; font-size: 0.95rem; line-height: 1.7; margin-bottom: 2rem;">
+                    The Polar Satellite Launch Vehicle. ISRO's most reliable launcher with 50+ consecutive successful
+                    missions.
+                    Holds the world record for launching 104 satellites in a single mission.
+                </p>
+                <div style="border-top: 1px solid #333; padding-top: 1.5rem;">
+                    <p style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                        <span style="color: #666;">HEIGHT</span>
+                        <span style="color: var(--starlight-white);">44 m</span>
+                    </p>
+                    <p style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                        <span style="color: #666;">PAYLOAD (SSO)</span>
+                        <span style="color: var(--starlight-white);">1,750 kg</span>
+                    </p>
+                    <p style="display: flex; justify-content: space-between;">
+                        <span style="color: #666;">STAGES</span>
+                        <span style="color: var(--starlight-white);">4</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- SSLV -->
+            <div class="tilt-card float-up"
+                style="border: 1px solid var(--border-color); padding: 3rem 2rem; width: 320px; text-align: left;">
+                <h3 style="color: var(--tiranga-green); margin-bottom: 0.5rem;">SSLV</h3>
+                <p class="badge"
+                    style="border-color: var(--text-secondary); color: var(--text-secondary); font-size: 0.7rem; margin-bottom: 1.5rem;">
+                    RAPID LAUNCH
+                </p>
+                <p style="color: #aaa; font-size: 0.95rem; line-height: 1.7; margin-bottom: 2rem;">
+                    Small Satellite Launch Vehicle. Designed for rapid turnaround, low cost, and flexibility.
+                    Launch-on-demand capability for the commercial small satellite market.
+                </p>
+                <div style="border-top: 1px solid #333; padding-top: 1.5rem;">
+                    <p style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                        <span style="color: #666;">HEIGHT</span>
+                        <span style="color: var(--starlight-white);">34 m</span>
+                    </p>
+                    <p style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                        <span style="color: #666;">PAYLOAD (LEO)</span>
+                        <span style="color: var(--starlight-white);">500 kg</span>
+                    </p>
+                    <p style="display: flex; justify-content: space-between;">
+                        <span style="color: #666;">STAGES</span>
+                        <span style="color: var(--starlight-white);">3</span>
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- STATS SECTION -->
-    <section class="stats-section" style="background: #000; display: flex; flex-direction: row; gap: 4rem;">
-        <div class="stat-item" data-count="403">
-            <span class="number" style="font-size: 6rem; font-weight: 700; display: block;">283</span>
-            <p style="text-align: center;">TOTAL LAUNCHES</p>
-        </div>
-        <div class="stat-item" data-count="367">
-            <span class="number" style="font-size: 6rem; font-weight: 700; display: block;">246</span>
-            <p style="text-align: center;">TOTAL LANDINGS</p>
-        </div>
-        <div class="stat-item" data-count="335">
-            <span class="number" style="font-size: 6rem; font-weight: 700; display: block;">221</span>
-            <p style="text-align: center;">REFLIGHTS</p>
-        </div>
-    </section>
+    <!-- GAGANYAAN SECTION -->
+    <section id="gaganyaan" class="mission-card"
+        style="background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('isro_lvm3_launch.png') center/cover; min-height: 100vh;">
+        <div class="hero-content" style="max-width: 800px;">
+            <h2 class="text-reveal" style="color: var(--isro-blue); font-size: 3.5rem;">GAGANYAAN</h2>
+            <h3 class="text-reveal" style="font-weight: 300; color: var(--metallic-silver); margin-bottom: 2rem;">
+                INDIA'S HUMAN SPACEFLIGHT PROGRAMME</h3>
+            <p class="text-reveal" style="font-size: 1.15rem; line-height: 1.8; margin-bottom: 3rem;">
+                India's ambitious Human Spaceflight Programme aims to demonstrate indigenous capability by launching
+                a crew of 3 astronauts to an orbit of 400 km for a 3-day mission and bringing them back safely to Earth.
+            </p>
 
-    <!-- CAREERS SECTION -->
-    <section id="careers" style="background: #111; min-height: 50vh;">
-        <h2 class="float-up">CAREERS</h2>
-        <button class="cta-button scale-reveal">VIEW OPENINGS</button>
-    </section>
-
-    <!-- PROMPT DISPLAY SECTION -->
-    <section class="prompt-section" style="background: #111; padding: 4rem 2rem; width: 100%; align-items: flex-start;">
-        <div class="container" style="max-width: 1200px; margin: 0 auto; width: 100%;">
-            <h2 class="float-up">ORIGINAL PROMPT</h2>
-            <div class="prompt-content"
-                style="background: #000; padding: 2rem; border: 1px solid #333; font-family: monospace; white-space: pre-wrap; height: 400px; overflow-y: scroll; color: #0f0;">
-                Loading prompt...
+            <div style="display: flex; gap: 4rem; justify-content: center; margin-top: 3rem; flex-wrap: wrap;">
+                <div class="scale-reveal" style="text-align: center;">
+                    <span style="font-size: 4rem; font-weight: 700; color: var(--isro-orange); display: block;">3</span>
+                    <p style="font-size: 0.85rem; letter-spacing: 2px; color: var(--text-secondary);">CREW MEMBERS</p>
+                </div>
+                <div class="scale-reveal" style="text-align: center;">
+                    <span style="font-size: 4rem; font-weight: 700; color: var(--isro-orange); display: block;">3</span>
+                    <p style="font-size: 0.85rem; letter-spacing: 2px; color: var(--text-secondary);">DAYS IN ORBIT</p>
+                </div>
+                <div class="scale-reveal" style="text-align: center;">
+                    <span
+                        style="font-size: 4rem; font-weight: 700; color: var(--isro-orange); display: block;">400</span>
+                    <p style="font-size: 0.85rem; letter-spacing: 2px; color: var(--text-secondary);">KM ALTITUDE</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer style="padding: 4rem; text-align: center; border-top: 1px solid #333;">
-        <p style="color: #666; font-size: 0.8rem;">SPACEX © 2026</p>
-        <div class="links" style="margin-top: 1rem; display: flex; justify-content: center; gap: 1rem;">
-            <a href="#" style="font-size: 0.8rem; color: #fff;">TWITTER</a>
-            <a href="#" style="font-size: 0.8rem; color: #fff;">YOUTUBE</a>
-            <a href="#" style="font-size: 0.8rem; color: #fff;">INSTAGRAM</a>
-            <a href="#" style="font-size: 0.8rem; color: #fff;">FLICKR</a>
-            <a href="#" style="font-size: 0.8rem; color: #fff;">LINKEDIN</a>
-            <a href="#" style="font-size: 0.8rem; color: #fff;">PRIVACY</a>
-            <a href="#" style="font-size: 0.8rem; color: #fff;">SUPPLIERS</a>
+    <!-- MISSIONS TIMELINE -->
+    <section id="missions" style="background: #050505; padding: 6rem 2rem;">
+        <h2 class="float-up" style="margin-bottom: 4rem;">A LEGACY OF EXPLORATION</h2>
+
+        <div style="max-width: 900px; margin: 0 auto;">
+            <!-- Mangalyaan 2013 -->
+            <div class="float-up" style="display: flex; margin-bottom: 5rem; align-items: flex-start; gap: 3rem;">
+                <div style="text-align: right; min-width: 180px;">
+                    <h3 style="color: var(--tiranga-green); margin: 0; font-size: 2.5rem;">2013</h3>
+                    <p style="color: var(--text-secondary); font-size: 1.1rem; margin-top: 0.5rem;">MANGALYAAN</p>
+                </div>
+                <div
+                    style="width: 3px; height: 120px; background: linear-gradient(to bottom, var(--tiranga-green), transparent);">
+                </div>
+                <div style="flex: 1;">
+                    <p style="color: var(--text-secondary); line-height: 1.8; font-size: 1.05rem;">
+                        India becomes the first nation to reach Mars orbit on its maiden attempt. The Mars Orbiter
+                        Mission (MOM)
+                        famously cost less than the Hollywood movie 'Gravity', showcasing ISRO's frugal engineering
+                        excellence.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Chandrayaan-2 2019 -->
+            <div class="float-up" style="display: flex; margin-bottom: 5rem; align-items: flex-start; gap: 3rem;">
+                <div style="text-align: right; min-width: 180px;">
+                    <h3 style="color: var(--isro-blue); margin: 0; font-size: 2.5rem;">2019</h3>
+                    <p style="color: var(--text-secondary); font-size: 1.1rem; margin-top: 0.5rem;">CHANDRAYAAN-2</p>
+                </div>
+                <div
+                    style="width: 3px; height: 120px; background: linear-gradient(to bottom, var(--isro-blue), transparent);">
+                </div>
+                <div style="flex: 1;">
+                    <p style="color: var(--text-secondary); line-height: 1.8; font-size: 1.05rem;">
+                        A complex mission featuring an Orbiter, Lander (Vikram), and Rover (Pragyan). While the soft
+                        landing
+                        wasn't successful, the Orbiter continues to provide invaluable scientific data from lunar orbit.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Aditya-L1 2023 -->
+            <div class="float-up" style="display: flex; margin-bottom: 5rem; align-items: flex-start; gap: 3rem;">
+                <div style="text-align: right; min-width: 180px;">
+                    <h3 style="color: var(--isro-orange); margin: 0; font-size: 2.5rem;">2023</h3>
+                    <p style="color: var(--text-secondary); font-size: 1.1rem; margin-top: 0.5rem;">ADITYA-L1</p>
+                </div>
+                <div
+                    style="width: 3px; height: 120px; background: linear-gradient(to bottom, var(--isro-orange), transparent);">
+                </div>
+                <div style="flex: 1;">
+                    <p style="color: var(--text-secondary); line-height: 1.8; font-size: 1.05rem;">
+                        India's first solar observatory mission. Positioned at the Lagrange Point 1 (L1), approximately
+                        1.5 million km
+                        from Earth, to study the Sun's corona, solar winds, and space weather phenomena continuously.
+                    </p>
+                </div>
+            </div>
         </div>
+    </section>
+
+    <!-- STATISTICS -->
+    <section id="stats" class="stats-section"
+        style="background: linear-gradient(180deg, #050505 0%, #0a0a0a 100%); flex-direction: row; gap: 5rem; padding: 6rem 2rem;">
+        <div class="stat-item" data-count="124">
+            <span class="number"
+                style="font-size: 5.5rem; font-weight: 700; display: block; color: var(--starlight-white); font-family: 'Rajdhani';">0</span>
+            <p
+                style="text-align: center; color: var(--isro-orange); letter-spacing: 3px; font-size: 0.9rem; margin-top: 1rem;">
+                SPACECRAFT MISSIONS</p>
+        </div>
+        <div class="stat-item" data-count="95">
+            <span class="number"
+                style="font-size: 5.5rem; font-weight: 700; display: block; color: var(--starlight-white); font-family: 'Rajdhani';">0</span>
+            <p
+                style="text-align: center; color: var(--isro-blue); letter-spacing: 3px; font-size: 0.9rem; margin-top: 1rem;">
+                LAUNCH MISSIONS</p>
+        </div>
+        <div class="stat-item" data-count="432">
+            <span class="number"
+                style="font-size: 5.5rem; font-weight: 700; display: block; color: var(--starlight-white); font-family: 'Rajdhani';">0</span>
+            <p
+                style="text-align: center; color: var(--tiranga-green); letter-spacing: 3px; font-size: 0.9rem; margin-top: 1rem;">
+                FOREIGN SATELLITES</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer
+        style="padding: 5rem 2rem 3rem; text-align: center; border-top: 1px solid #222; background-color: var(--space-black);">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; letter-spacing: 6px; color: var(--starlight-white);">ISRO
+        </h2>
+        <p style="color: var(--text-secondary); font-style: italic; margin-bottom: 3rem; font-size: 1.1rem;">
+            "Space technology in the Service of Humankind"
+        </p>
+
+        <div style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; margin-bottom: 3rem;">
+            <a href="#" style="color: #999; font-size: 0.9rem;">Department of Space</a>
+            <a href="#" style="color: #999; font-size: 0.9rem;">VSSC</a>
+            <a href="#" style="color: #999; font-size: 0.9rem;">URSC</a>
+            <a href="#" style="color: #999; font-size: 0.9rem;">SDSC SHAR</a>
+            <a href="#" style="color: #999; font-size: 0.9rem;">IIRS</a>
+            <a href="#" style="color: #999; font-size: 0.9rem;">NRSC</a>
+        </div>
+
+        <p style="font-size: 0.85rem; color: #555;">
+            © 2026 Indian Space Research Organisation. All rights reserved.
+        </p>
     </footer>
 
     <script type="module" src="/main.js"></script>
