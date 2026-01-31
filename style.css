@@ -524,6 +524,332 @@ nav>div:last-of-type {
   z-index: 1;
 }
 
+/* ===================================
+   INFOGRAPHIC TIMELINE STYLES
+   =================================== */
+
+.timeline-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.timeline-container {
+  position: relative;
+  width: 100%;
+  padding: 4rem 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  cursor: grab;
+}
+
+.timeline-container.dragging {
+  cursor: grabbing;
+}
+
+.timeline-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Timeline Track - Fixed height for vertical layout */
+.timeline-track {
+  position: relative;
+  min-width: max-content;
+  height: 500px;
+  /* Specific height to accommodate top and bottom events */
+  padding: 0 6rem;
+  /* Extra horizontal padding strings things out */
+  display: flex;
+  align-items: center;
+  /* Center line vertically */
+}
+
+/* Central Timeline Line */
+.timeline-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  /* Thicker line */
+  background: linear-gradient(90deg,
+      #00d2ff 0%,
+      #3a7bd5 20%,
+      #0097e6 40%,
+      #44bd32 60%,
+      #8c7ae6 80%,
+      #9c88ff 100%);
+  transform: translateY(-50%);
+  border-radius: 4px;
+  box-shadow: 0 0 15px rgba(0, 210, 255, 0.3);
+  z-index: 1;
+}
+
+/* Events Container */
+.timeline-events {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+/* Individual Event Item */
+.timeline-event {
+  position: relative;
+  width: 280px;
+  /* Fixed width for each block */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  /* Don't shrink */
+  z-index: 2;
+}
+
+/* 
+   ALTERNATING LAYOUT LOGIC 
+   ODD: Top Side
+   EVEN: Bottom Side
+*/
+
+/* ODD EVENTS (TOP) */
+.timeline-event:nth-child(odd) {
+  justify-content: flex-end;
+  /* Push content to bottom of container (which is above line? No, we need absolute math) */
+  /* Actually better: Position everything relative to the center line using margins/flex */
+}
+
+/* Common Content Wrapper for positioning */
+.timeline-content-wrapper {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+/* ODD: Sits Bottom 50% (meaning it ends at 50% line) */
+.timeline-event:nth-child(odd) .timeline-content-wrapper {
+  bottom: 50%;
+  padding-bottom: 40px;
+  /* Space for stem */
+}
+
+/* EVEN: Sits Top 50% (starts at 50% line) */
+.timeline-event:nth-child(even) .timeline-content-wrapper {
+  top: 50%;
+  padding-top: 40px;
+  /* Space for stem */
+  flex-direction: column-reverse;
+  /* Flip text order if needed, but standard is fine */
+}
+
+/* Vertical Connection Stem (The Line) */
+.timeline-content-wrapper::before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  background: currentColor;
+  /* Inherit color */
+  left: 50%;
+  transform: translateX(-50%);
+  height: 40px;
+  /* Length of connection */
+  opacity: 0.6;
+}
+
+/* ODD Stem - Bottom */
+.timeline-event:nth-child(odd) .timeline-content-wrapper::before {
+  bottom: 0;
+}
+
+/* EVEN Stem - Top */
+.timeline-event:nth-child(even) .timeline-content-wrapper::before {
+  top: 0;
+}
+
+/* Triangle Pointer on Main Line */
+.timeline-content-wrapper::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-style: solid;
+  border-width: 8px 8px 0 8px;
+  /* Down pointing triangle */
+  border-color: currentColor transparent transparent transparent;
+}
+
+/* ODD Pointer (Points Down to line) */
+.timeline-event:nth-child(odd) .timeline-content-wrapper::after {
+  bottom: -4px;
+  /* Slight overlap on line */
+}
+
+/* EVEN Pointer (Points Up to line) */
+.timeline-event:nth-child(even) .timeline-content-wrapper::after {
+  top: -4px;
+  border-width: 0 8px 8px 8px;
+  /* Up pointing */
+  border-color: transparent transparent currentColor transparent;
+}
+
+/* Circle Year Marker */
+.timeline-year {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #0a0a0f !important;
+  /* Solid dark background to hide line behind */
+  border: 3px solid currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  z-index: 10;
+  /* Ensure on top of line and stem */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+  margin: 10px 0;
+}
+
+/* Labels and Text */
+.timeline-label {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fff;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.timeline-detail {
+  display: block !important;
+  /* Force visible */
+  position: static;
+  /* cancel absolute */
+  width: 100%;
+  padding: 0 1rem;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  text-align: center;
+  transform: none;
+}
+
+/* Hide detail header since we have label? Or re-style */
+.timeline-detail h4 {
+  display: none;
+  /* Hide duplicate title if label is enough, or style it */
+}
+
+/* Used for description */
+.timeline-detail p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  max-width: 220px;
+  margin: 0 auto;
+}
+
+/* HIDE BUTTONS */
+.timeline-nav-btn {
+  display: none !important;
+}
+
+/* DOT (Small dot on main line) */
+.timeline-dot {
+  display: none;
+  /* We use the triangle instead */
+}
+
+/* 
+   COLOR CYCLING 
+   We apply specific colors to the 'currentColor' context 
+*/
+.timeline-event:nth-child(4n+1) {
+  color: #00d2ff;
+}
+
+/* Cyan */
+.timeline-event:nth-child(4n+2) {
+  color: #44bd32;
+}
+
+/* Green */
+.timeline-event:nth-child(4n+3) {
+  color: #0097e6;
+}
+
+/* Blue */
+.timeline-event:nth-child(4n+4) {
+  color: #8c7ae6;
+}
+
+/* Purple */
+
+/* Hover Effects */
+.timeline-event:hover .timeline-year {
+  transform: scale(1.15);
+  background: currentColor;
+  color: #2b55ff;
+  box-shadow: 0 0 25px currentColor;
+}
+
+.timeline-event:hover .timeline-detail p {
+  color: #fff;
+}
+
+
+/* Future Event Styling */
+.timeline-future .timeline-dot {
+  background: linear-gradient(135deg, var(--nebula-purple), var(--cosmic-blue));
+  box-shadow:
+    0 0 0 4px rgba(107, 76, 154, 0.2),
+    0 0 20px rgba(107, 76, 154, 0.4);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.timeline-future .timeline-year {
+  color: var(--nebula-purple);
+}
+
+.timeline-future:hover .timeline-dot {
+  background: linear-gradient(135deg, var(--cosmic-blue), var(--nebula-purple));
+  box-shadow:
+    0 0 0 6px rgba(107, 76, 154, 0.3),
+    0 0 30px rgba(107, 76, 154, 0.6),
+    0 0 50px rgba(13, 71, 161, 0.4);
+}
+
+/* Pulse Animation for Future Events */
+@keyframes pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   h1 {
@@ -553,5 +879,53 @@ nav>div:last-of-type {
 
   section {
     padding: 2rem 1rem;
+  }
+
+  /* Timeline Responsive Styles */
+  .timeline-container {
+    padding: 2rem 0;
+  }
+
+  .timeline-events {
+    gap: 5rem;
+    padding: 0 1rem;
+  }
+
+  .timeline-event {
+    min-width: 120px;
+  }
+
+  .timeline-dot {
+    width: 16px;
+    height: 16px;
+  }
+
+  .timeline-year {
+    font-size: 1.4rem;
+    margin-top: 1.5rem;
+  }
+
+  .timeline-label {
+    font-size: 0.8rem;
+    max-width: 120px;
+  }
+
+  .timeline-detail {
+    width: 280px;
+    padding: 1.5rem;
+    top: -260px;
+  }
+
+  .timeline-detail h4 {
+    font-size: 1.1rem;
+  }
+
+  .timeline-detail p {
+    font-size: 0.85rem;
+  }
+
+  .timeline-event:hover .timeline-dot {
+    width: 22px;
+    height: 22px;
   }
 }

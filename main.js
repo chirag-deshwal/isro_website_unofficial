@@ -185,6 +185,94 @@ window.toggleMusic = function () {
   }
 }
 
+// Timeline Horizontal Scroll Enhancement
+const timelineContainer = document.querySelector('.timeline-container');
+const timelineWrapper = document.querySelector('.timeline-wrapper');
+
+if (timelineContainer) {
+
+
+  // Add touch/drag scrolling for better mobile experience
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  timelineContainer.addEventListener('mousedown', (e) => {
+    isDown = true;
+    timelineContainer.classList.add('dragging');
+    startX = e.pageX - timelineContainer.offsetLeft;
+    scrollLeft = timelineContainer.scrollLeft;
+  });
+
+  timelineContainer.addEventListener('mouseleave', () => {
+    isDown = false;
+    timelineContainer.classList.remove('dragging');
+  });
+
+  timelineContainer.addEventListener('mouseup', () => {
+    isDown = false;
+    timelineContainer.classList.remove('dragging');
+  });
+
+  timelineContainer.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - timelineContainer.offsetLeft;
+    const walk = (x - startX) * 2;
+    timelineContainer.scrollLeft = scrollLeft - walk;
+  });
+
+  // Auto-scroll to Current Year
+  const currentYear = new Date().getFullYear();
+  // Find event with current year or closest future year if exact match not found
+  let targetEvent = document.querySelector(`.timeline-event[data-year="${currentYear}"]`);
+
+  // Fallback to the last event if current year is beyond timeline
+  if (!targetEvent) {
+    const events = document.querySelectorAll('.timeline-event');
+    if (events.length > 0) targetEvent = events[events.length - 1];
+  }
+
+  if (targetEvent) {
+    // Scroll to center the event
+    // We need to wait a brief moment for layout to stabilize
+    setTimeout(() => {
+      const containerWidth = timelineContainer.clientWidth;
+      const eventLeft = targetEvent.offsetLeft;
+      const eventWidth = targetEvent.offsetWidth;
+
+      // Calculate scroll position to center the element
+      const scrollPos = eventLeft - (containerWidth / 2) + (eventWidth / 2);
+
+      timelineContainer.scrollTo({
+        left: scrollPos,
+        behavior: 'smooth'
+      });
+    }, 500); // 500ms delay to ensure styles/layout are applied
+  }
+}
+
+// Timeline Events Animation on Scroll into View
+gsap.utils.toArray('.timeline-event').forEach((event, i) => {
+  gsap.fromTo(event,
+    {
+      opacity: 0,
+      y: 30
+    },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 0.6,
+      delay: i * 0.05, // Stagger effect based on index
+      scrollTrigger: {
+        trigger: '#timeline',
+        start: 'top 70%',
+        toggleActions: 'play none none reverse'
+      }
+    }
+  );
+});
+
 // Initialize music on page load
 document.addEventListener('DOMContentLoaded', () => {
   initBackgroundMusic();

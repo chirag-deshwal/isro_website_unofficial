@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Chandrayaan-3 - India's historic mission to the lunar south pole." />
+    <title>Chandrayaan-3 | ISRO</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="logo">
+            <a href="../index.html"><img src="/isro-logo.png" alt="ISRO Logo" style="height: 50px; width: auto;"></a>
+        </div>
+        <div>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="achievements.html">Achievements</a>
+                <a href="gaganyaan.html">Gaganyaan</a>
+            </div>
+            <button id="music-toggle" onclick="toggleMusic()" class="music-btn" aria-label="Mute music">
+                🔊
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero-fullscreen parallax-bg">
+        <div class="video-bg"
+            style="background: url('../chandrayaan_moon_landing.png') no-repeat center center/cover; filter: brightness(0.4);">
+        </div>
+
+        <div class="hero-content float-up">
+            <div class="badge" style="background: rgba(243, 112, 33, 0.2); border-color: var(--isro-orange);">SUCCESSFUL
+                MISSION</div>
+            <h1 style="font-size: 4rem;">CHANDRAYAAN-3</h1>
+            <h2 style="font-size: 2rem; color: var(--metallic-silver); margin-bottom: 2rem;">CONQUERING THE SOUTH POLE
+            </h2>
+            <p style="font-size: 1.2rem; margin: 2rem auto; max-width: 800px; line-height: 1.8;">
+                India makes history as the first nation to successfully soft-land on the lunar South Pole,
+                demonstrating end-to-end capability in safe landing and roving on the lunar surface.
+            </p>
+        </div>
+
+        <div class="scroll-indicator">
+            <span style="font-family: 'Rajdhani'; letter-spacing: 2px; font-size: 0.8rem;">DISCOVER THE JOURNEY</span>
+            <div class="arrow-down"></div>
+        </div>
+    </section>
+
+    <!-- MISSION MODULES (Formerly Cards 2nd) -->
+    <section style="background: linear-gradient(180deg, #050505 0%, #0a0a0a 100%); padding: 6rem 2rem;">
+        <h2 class="float-up"
+            style="color: var(--metallic-silver); margin-bottom: 1rem; text-align: center; font-size: 3rem;">MISSION
+            MODULES</h2>
+        <p class="float-up"
+            style="color: var(--text-secondary); margin-bottom: 5rem; font-size: 1.1rem; text-align: center;">
+            The technological marvels that made the soft landing possible.
+        </p>
+
+        <div
+            style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; max-width: 1200px; margin: 0 auto;">
+            <!-- Propulsion Module -->
+            <div class="tilt-card float-up"
+                style="border: 1px solid var(--border-color); padding: 3rem 2rem; width: 350px; text-align: left; background: rgba(255,255,255,0.02);">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">🚀</div>
+                <h3 style="color: var(--isro-orange); margin-bottom: 0.5rem;">PROPULSION MODULE</h3>
+                <p class="badge"
+                    style="border-color: var(--text-secondary); color: var(--text-secondary); font-size: 0.7rem; margin-bottom: 1.5rem;">
+                    ORBITER
+                </p>
+                <p style="color: #aaa; font-size: 0.95rem; line-height: 1.7; margin-bottom: 2rem;">
+                    Carried the Lander and Rover configuration till 100 km lunar orbit. It also carries a
+                    spectro-polarimetry payload to study Earth from lunar orbit.
+                </p>
+            </div>
+
+            <!-- Lander Vikram -->
+            <div class="tilt-card float-up"
+                style="border: 1px solid var(--border-color); padding: 3rem 2rem; width: 350px; text-align: left; background: rgba(255,255,255,0.02);">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">🛸</div>
+                <h3 style="color: var(--isro-blue); margin-bottom: 0.5rem;">VIKRAM LANDER</h3>
+                <p class="badge"
+                    style="border-color: var(--text-secondary); color: var(--text-secondary); font-size: 0.7rem; margin-bottom: 1.5rem;">
+                    SOFT LANDING
+                </p>
+                <p style="color: #aaa; font-size: 0.95rem; line-height: 1.7; margin-bottom: 2rem;">
+                    Designed to execute a soft landing on the lunar surface. Equipped with diverse scientific payloads
+                    to measure thermal properties and seismicity.
+                </p>
+            </div>
+
+            <!-- Rover Pragyan -->
+            <div class="tilt-card float-up"
+                style="border: 1px solid var(--border-color); padding: 3rem 2rem; width: 350px; text-align: left; background: rgba(255,255,255,0.02);">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">🚜</div>
+                <h3 style="color: var(--tiranga-green); margin-bottom: 0.5rem;">PRAGYAN ROVER</h3>
+                <p class="badge"
+                    style="border-color: var(--text-secondary); color: var(--text-secondary); font-size: 0.7rem; margin-bottom: 1.5rem;">
+                    EXPLORATION
+                </p>
+                <p style="color: #aaa; font-size: 0.95rem; line-height: 1.7; margin-bottom: 2rem;">
+                    A 6-wheeled robotic vehicle capable of mobility on lunar terrain. Carries payloads to determine the
+                    elemental composition of lunar soil.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE JOURNEY (Timeline) -->
+    <section style="background: #050505; padding: 6rem 2rem;">
+        <h2 class="float-up" style="margin-bottom: 4rem; text-align: center; font-size: 3rem;">THE JOURNEY</h2>
+
+        <div style="max-width: 900px; margin: 0 auto;">
+            <!-- Phase 1 -->
+            <div class="float-up" style="display: flex; margin-bottom: 5rem; align-items: flex-start; gap: 3rem;">
+                <div style="text-align: right; min-width: 180px;">
+                    <h3 style="color: var(--isro-orange); margin: 0; font-size: 2rem;">PHASE 01</h3>
+                    <p style="color: var(--text-secondary); font-size: 1rem; margin-top: 0.5rem;">EARTH CENTRIC</p>
+                </div>
+                <div
+                    style="width: 3px; height: 100px; background: linear-gradient(to bottom, var(--isro-orange), transparent);">
+                </div>
+                <div style="flex: 1;">
+                    <p style="color: var(--text-secondary); line-height: 1.8; font-size: 1.05rem;">
+                        Launch by LVM3-M4, followed by a series of Earth bound maneuvers to raise the orbit height
+                        before translunar injection.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Phase 2 -->
+            <div class="float-up" style="display: flex; margin-bottom: 5rem; align-items: flex-start; gap: 3rem;">
+                <div style="text-align: right; min-width: 180px;">
+                    <h3 style="color: var(--isro-blue); margin: 0; font-size: 2rem;">PHASE 02</h3>
+                    <p style="color: var(--text-secondary); font-size: 1rem; margin-top: 0.5rem;">LUNAR TRANSFER</p>
+                </div>
+                <div
+                    style="width: 3px; height: 100px; background: linear-gradient(to bottom, var(--isro-blue), transparent);">
+                </div>
+                <div style="flex: 1;">
+                    <p style="color: var(--text-secondary); line-height: 1.8; font-size: 1.05rem;">
+                        Trajectory transfer to Moon's sphere of influence, followed by Lunar Orbit Insertion and orbit
+                        reduction maneuvers.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Phase 3 -->
+            <div class="float-up" style="display: flex; margin-bottom: 5rem; align-items: flex-start; gap: 3rem;">
+                <div style="text-align: right; min-width: 180px;">
+                    <h3 style="color: var(--tiranga-green); margin: 0; font-size: 2rem;">PHASE 03</h3>
+                    <p style="color: var(--text-secondary); font-size: 1rem; margin-top: 0.5rem;">SOFT LANDING</p>
+                </div>
+                <div
+                    style="width: 3px; height: 100px; background: linear-gradient(to bottom, var(--tiranga-green), transparent);">
+                </div>
+                <div style="flex: 1;">
+                    <p style="color: var(--text-secondary); line-height: 1.8; font-size: 1.05rem;">
+                        Power descent phase initiated from 30km altitude, performing rough braking and fine braking to
+                        achieve a precise soft landing near the South Pole.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MISSION OBJECTIVES (Feature) -->
+    <section class="mission-card"
+        style="background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('../chandrayaan_moon_landing.png') center/cover; min-height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 4rem;">
+        <div class="hero-content" style="max-width: 900px;">
+            <h2 class="text-reveal" style="color: var(--starlight-white); font-size: 3.5rem; margin-bottom: 3rem;">
+                MISSION OBJECTIVES</h2>
+
+            <div style="display: grid; gap: 2rem; text-align: left;">
+                <div class="float-up"
+                    style="display: flex; align-items: center; gap: 2rem; background: rgba(5,5,5,0.6); padding: 1.5rem; border-left: 4px solid var(--isro-orange);">
+                    <span style="font-size: 1.5rem; font-weight: 700; color: var(--isro-orange);">01</span>
+                    <p style="font-size: 1.2rem; margin: 0; color: #eee;">To demonstrate Safe and Soft Landing on Lunar
+                        Surface</p>
+                </div>
+
+                <div class="float-up"
+                    style="display: flex; align-items: center; gap: 2rem; background: rgba(5,5,5,0.6); padding: 1.5rem; border-left: 4px solid var(--starlight-white);">
+                    <span style="font-size: 1.5rem; font-weight: 700; color: var(--starlight-white);">02</span>
+                    <p style="font-size: 1.2rem; margin: 0; color: #eee;">To demonstrate Rover roving on the moon</p>
+                </div>
+
+                <div class="float-up"
+                    style="display: flex; align-items: center; gap: 2rem; background: rgba(5,5,5,0.6); padding: 1.5rem; border-left: 4px solid var(--tiranga-green);">
+                    <span style="font-size: 1.5rem; font-weight: 700; color: var(--tiranga-green);">03</span>
+                    <p style="font-size: 1.2rem; margin: 0; color: #eee;">To conduct in-situ scientific experiments</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MISSION STATS (Using Numbers Bottom) -->
+    <section class="stats-section"
+        style="background: linear-gradient(180deg, #0a0a0a 0%, #050505 100%); flex-direction: row; gap: 4rem; padding: 6rem 2rem; border-bottom: 1px solid #222;">
+        <div class="stat-item float-up" data-count="14">
+            <span class="number"
+                style="font-size: 3.5rem; font-weight: 700; display: block; color: var(--starlight-white); font-family: 'Rajdhani';">14
+                JUL 2023</span>
+            <p
+                style="text-align: center; color: var(--isro-orange); letter-spacing: 3px; font-size: 0.9rem; margin-top: 1rem;">
+                LAUNCH DATE</p>
+        </div>
+        <div class="stat-item float-up" data-count="23">
+            <span class="number"
+                style="font-size: 3.5rem; font-weight: 700; display: block; color: var(--starlight-white); font-family: 'Rajdhani';">23
+                AUG 2023</span>
+            <p
+                style="text-align: center; color: var(--isro-blue); letter-spacing: 3px; font-size: 0.9rem; margin-top: 1rem;">
+                LANDING DATE</p>
+        </div>
+        <div class="stat-item float-up" data-count="1">
+            <span class="number"
+                style="font-size: 3.5rem; font-weight: 700; display: block; color: var(--starlight-white); font-family: 'Rajdhani';">LVM3</span>
+            <p
+                style="text-align: center; color: var(--tiranga-green); letter-spacing: 3px; font-size: 0.9rem; margin-top: 1rem;">
+                LAUNCH VEHICLE</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer
+        style="padding: 5rem 2rem 3rem; text-align: center; border-top: 1px solid #222; background-color: var(--space-black);">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; letter-spacing: 6px; color: var(--starlight-white);">ISRO
+        </h2>
+        <p style="color: var(--text-secondary); font-style: italic; margin-bottom: 3rem; font-size: 1.1rem;">
+            "Space technology in the Service of Humankind"
+        </p>
+
+        <div style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; margin-bottom: 3rem;">
+            <a href="../index.html" style="color: #999; font-size: 0.9rem;">Home</a>
+            <a href="about.html" style="color: #999; font-size: 0.9rem;">About</a>
+            <a href="achievements.html" style="color: #999; font-size: 0.9rem;">Achievements</a>
+            <a href="gaganyaan.html" style="color: #999; font-size: 0.9rem;">Gaganyaan</a>
+        </div>
+
+        <p style="font-size: 0.85rem; color: #555;">
+            © 2026 Indian Space Research Organisation. All rights reserved.
+        </p>
+    </footer>
+
+    <script type="module" src="../main.js"></script>
+</body>
+
+</html>
