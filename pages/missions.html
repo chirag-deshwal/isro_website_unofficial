@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="ISRO Missions - Chandrayaan, Mangalyaan, Aditya-L1, Gaganyaan." />
+    <title>Missions | ISRO</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="logo">
+            <img src="/isro-logo.png" alt="ISRO Logo" style="height: 50px; width: auto;">
+        </div>
+        <div>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="missions.html" style="color: var(--isro-orange);">Missions</a>
+                <a href="launchers.html">Launchers</a>
+                <a href="services.html">Services</a>
+                <a href="centres.html">Centres</a>
+                <a href="gaganyaan.html">Gaganyaan</a>
+                <a href="achievements.html">Achievements</a>
+            </div>
+            <button id="music-toggle" onclick="toggleMusic()" class="music-btn" aria-label="Mute music">
+                🔊
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero-fullscreen parallax-bg" style="min-height: 50vh;">
+        <div class="video-bg" style="background: linear-gradient(rgba(5,5,5,0.7), rgba(5,5,5,0.8)), url('../chandrayaan_moon_landing.png') no-repeat center bottom/cover;"></div>
+
+        <div class="hero-content float-up">
+            <div class="badge" style="background: rgba(27, 57, 100, 0.2); border-color: var(--isro-blue);">🌌 EXPLORATION</div>
+            <h1 style="font-size: 4rem;">MISSIONS</h1>
+            <h2 style="font-size: 2rem; color: var(--metallic-silver); font-weight: 300;">EXPLORING THE COSMOS</h2>
+            <p style="font-size: 1.2rem; margin: 2rem auto; max-width: 800px; line-height: 1.8;">
+                From Earth observation to interplanetary exploration, ISRO's missions push the boundaries of scientific discovery and technological innovation.
+            </p>
+        </div>
+    </section>
+
+    <!-- BREADCRUMB -->
+    <section style="background: rgba(0,0,0,0.5); min-height: auto; padding: 1.5rem 4rem; backdrop-filter: blur(10px);">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <p style="color: #888; font-size: 0.9rem;">
+                <a href="../index.html" style="color: var(--isro-orange);">Home</a> /
+                <span style="color: #888;">Activities</span> /
+                <span style="color: #fff;">Missions</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- MISSIONS CONTENT -->
+    <section style="background: transparent; padding: 6rem 2rem;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+
+            <!-- CHANDRAYAAN -->
+            <div class="float-up tilt-card" style="margin-bottom: 4rem; padding: 3rem; background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-radius: 8px; border-left: 4px solid var(--starlight-white);">
+                <h2 style="font-size: 2.5rem; color: var(--starlight-white); margin-bottom: 0.5rem;">CHANDRAYAAN SERIES</h2>
+                <h3 style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2rem; font-weight: 300;">Moon Exploration</h3>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <div style="background: rgba(0,0,0,0.4); padding: 1.5rem; border-radius: 8px;">
+                        <h4 style="color: var(--isro-orange); font-size: 1.2rem; margin-bottom: 0.5rem;">Chandrayaan-1 (2008)</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">First Indian lunar probe. It famously made the groundbreaking discovery of water molecules on the lunar surface.</p>
+                    </div>
+                    <div style="background: rgba(0,0,0,0.4); padding: 1.5rem; border-radius: 8px;">
+                        <h4 style="color: var(--isro-blue); font-size: 1.2rem; margin-bottom: 0.5rem;">Chandrayaan-2 (2019)</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">A complex mission featuring an Orbiter, Lander, and Rover. The Orbiter is still fully operational and continues to provide immense scientific data.</p>
+                    </div>
+                    <div style="background: rgba(0,0,0,0.4); padding: 1.5rem; border-radius: 8px;">
+                        <h4 style="color: var(--tiranga-green); font-size: 1.2rem; margin-bottom: 0.5rem;">Chandrayaan-3 (2023)</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">A historic achievement where India became the first nation to successfully land a spacecraft on the lunar South Pole.</p>
+                        <a href="chandrayaan-3.html" style="color: var(--isro-orange); font-size: 0.9rem; text-decoration: none; display: inline-block; margin-top: 1rem;">Explore Mission &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MANGALYAAN -->
+            <div class="float-up tilt-card" style="margin-bottom: 4rem; padding: 3rem; background: rgba(243, 112, 33, 0.05); border: 1px solid var(--border-color); border-radius: 8px; border-left: 4px solid var(--isro-orange);">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 2rem;">
+                    <div style="flex: 1; min-width: 300px;">
+                        <h2 style="font-size: 2.5rem; color: var(--isro-orange); margin-bottom: 0.5rem;">MANGALYAAN</h2>
+                        <h3 style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2rem; font-weight: 300;">Mars Orbiter Mission (2013)</h3>
+                        <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 1.5rem;">
+                            India's first interplanetary mission, showcasing ISRO's exceptional capabilities in frugal engineering and precision navigation across millions of kilometers.
+                        </p>
+                        <ul style="color: var(--text-secondary); line-height: 2; list-style-type: square; padding-left: 1.5rem;">
+                            <li>First Asian nation to reach Mars orbit</li>
+                            <li>First nation in the world to succeed on its maiden attempt</li>
+                            <li>Cost: ₹450 crore (famously less than the Hollywood movie "Gravity")</li>
+                            <li>Provided unprecedented images and data of the Martian surface</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ADITYA-L1 -->
+            <div class="float-up tilt-card" style="margin-bottom: 4rem; padding: 3rem; background: rgba(230, 200, 50, 0.05); border: 1px solid var(--border-color); border-radius: 8px; border-left: 4px solid #FDB813;">
+                <h2 style="font-size: 2.5rem; color: #FDB813; margin-bottom: 0.5rem;">ADITYA-L1</h2>
+                <h3 style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2rem; font-weight: 300;">Solar Observatory (2023)</h3>
+                <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 1.5rem;">
+                    India's first dedicated scientific mission to study the Sun, positioned advantageously at Lagrange Point L1, about 1.5 million km from Earth.
+                </p>
+                <div style="display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 1.5rem;">
+                    <div style="background: rgba(0,0,0,0.4); padding: 1rem 1.5rem; border-radius: 6px;">
+                        <span style="color: #FDB813; font-weight: 600; display: block; margin-bottom: 0.5rem;">Objective 1</span>
+                        <span style="color: #ccc; font-size: 0.9rem;">Study Solar Corona</span>
+                    </div>
+                    <div style="background: rgba(0,0,0,0.4); padding: 1rem 1.5rem; border-radius: 6px;">
+                        <span style="color: #FDB813; font-weight: 600; display: block; margin-bottom: 0.5rem;">Objective 2</span>
+                        <span style="color: #ccc; font-size: 0.9rem;">Analyze Solar Winds</span>
+                    </div>
+                    <div style="background: rgba(0,0,0,0.4); padding: 1rem 1.5rem; border-radius: 6px;">
+                        <span style="color: #FDB813; font-weight: 600; display: block; margin-bottom: 0.5rem;">Objective 3</span>
+                        <span style="color: #ccc; font-size: 0.9rem;">Monitor Space Weather</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GAGANYAAN -->
+            <div class="float-up tilt-card" style="margin-bottom: 4rem; padding: 3rem; background: rgba(27, 57, 100, 0.05); border: 1px solid var(--border-color); border-radius: 8px; border-left: 4px solid var(--isro-blue);">
+                <h2 style="font-size: 2.5rem; color: var(--isro-blue); margin-bottom: 0.5rem;">GAGANYAAN</h2>
+                <h3 style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2rem; font-weight: 300;">Human Spaceflight Program (Upcoming)</h3>
+                <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 1.5rem;">
+                    India's first human spaceflight program aiming to demonstrate indigenous capability to undertake human space flight missions to LEO.
+                </p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+                    <div style="border-left: 2px solid var(--isro-blue); padding-left: 1rem;">
+                        <p style="font-size: 0.85rem; color: #888; margin-bottom: 0.25rem;">CREW</p>
+                        <p style="color: #fff;">3 Astronauts</p>
+                    </div>
+                    <div style="border-left: 2px solid var(--isro-blue); padding-left: 1rem;">
+                        <p style="font-size: 0.85rem; color: #888; margin-bottom: 0.25rem;">ORBIT</p>
+                        <p style="color: #fff;">400 km LEO</p>
+                    </div>
+                    <div style="border-left: 2px solid var(--isro-blue); padding-left: 1rem;">
+                        <p style="font-size: 0.85rem; color: #888; margin-bottom: 0.25rem;">DURATION</p>
+                        <p style="color: #fff;">3 Days</p>
+                    </div>
+                    <div style="border-left: 2px solid var(--isro-blue); padding-left: 1rem;">
+                        <p style="font-size: 0.85rem; color: #888; margin-bottom: 0.25rem;">TEST MISSIONS</p>
+                        <p style="color: #fff;">TV-D1, TV-D2, G1, H1</p>
+                    </div>
+                </div>
+                <div style="margin-top: 2rem;">
+                    <a href="gaganyaan.html" class="cta-button" style="padding: 0.8rem 1.5rem; font-size: 0.9rem;">EXPLORE GAGANYAAN &rarr;</a>
+                </div>
+            </div>
+
+            <!-- OTHER NOTABLE MISSIONS -->
+            <div class="float-up tilt-card" style="padding: 3rem; background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-radius: 8px;">
+                <h2 style="font-size: 2rem; color: var(--starlight-white); margin-bottom: 2rem;">Other Notable Missions</h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                    <div style="padding: 1rem; border-bottom: 1px solid #333;">
+                        <h4 style="color: var(--tiranga-green); font-size: 1.1rem; margin-bottom: 0.5rem;">ASTROSAT</h4>
+                        <p style="color: #999; font-size: 0.9rem;">India's first multi-wavelength space observatory.</p>
+                    </div>
+                    <div style="padding: 1rem; border-bottom: 1px solid #333;">
+                        <h4 style="color: var(--tiranga-green); font-size: 1.1rem; margin-bottom: 0.5rem;">RISAT</h4>
+                        <p style="color: #999; font-size: 0.9rem;">Radar imaging satellites for all-weather surveillance.</p>
+                    </div>
+                    <div style="padding: 1rem; border-bottom: 1px solid #333;">
+                        <h4 style="color: var(--tiranga-green); font-size: 1.1rem; margin-bottom: 0.5rem;">CARTOSAT</h4>
+                        <p style="color: #999; font-size: 0.9rem;">High-resolution Earth imaging capabilities.</p>
+                    </div>
+                    <div style="padding: 1rem; border-bottom: 1px solid #333;">
+                        <h4 style="color: var(--tiranga-green); font-size: 1.1rem; margin-bottom: 0.5rem;">GSAT Series</h4>
+                        <p style="color: #999; font-size: 0.9rem;">Indigenous communication satellites for DTH, VSAT.</p>
+                    </div>
+                    <div style="padding: 1rem; border-bottom: 1px solid #333;">
+                        <h4 style="color: var(--tiranga-green); font-size: 1.1rem; margin-bottom: 0.5rem;">NAVIC / IRNSS</h4>
+                        <p style="color: #999; font-size: 0.9rem;">India's independent regional navigation satellite system.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer style="padding: 5rem 2rem 3rem; text-align: center; border-top: 1px solid #222; background-color: var(--space-black);">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; letter-spacing: 6px; color: var(--starlight-white);">ISRO</h2>
+        <p style="color: var(--text-secondary); font-style: italic; margin-bottom: 3rem; font-size: 1.1rem;">
+            "Space technology in the Service of Humankind"
+        </p>
+
+        <div style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; margin-bottom: 3rem;">
+            <a href="../index.html" style="color: #999; font-size: 0.9rem;">Home</a>
+            <a href="about.html" style="color: #999; font-size: 0.9rem;">About</a>
+            <a href="missions.html" style="color: #999; font-size: 0.9rem;">Missions</a>
+            <a href="launchers.html" style="color: #999; font-size: 0.9rem;">Launchers</a>
+        </div>
+
+        <p style="font-size: 0.85rem; color: #555;">
+            © 2026 Indian Space Research Organisation. All rights reserved.
+        </p>
+    </footer>
+
+    <script type="module" src="../main.js"></script>
+</body>
+
+</html>
